@@ -188,11 +188,16 @@ int main(int argc, char* argv[]){
 
 	int rnk, sze = 300;
 	float list[n];
+	float list1[n];
 	 
   	MPI_Init(&argc, &argv);
   	MPI_Comm_rank(MPI_COMM_WORLD, &rnk);
   	MPI_Comm_size(MPI_COMM_WORLD, &sze);
 	give_me_random(list);
+	int i = 0;
+	for (i; i < n; i++){
+		list1[n] = list[n];	
+	}
 	printf("List before sorting: \n");
 	print(list);
 	printf("\n\n");
@@ -200,7 +205,7 @@ int main(int argc, char* argv[]){
 	printf("List after parallel sorting: \n");
 	print(list);
 	printf("\n\n");
-	bubble(list,sze);
+	bubble(list1,sze);
 
 	MPI_Finalize( );
 	
